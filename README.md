@@ -70,7 +70,7 @@ Online game store project built with C# (.NET) and JavaScript.
 
 ## 📄 License
 
-© 2024 Ben Gutman. All rights reserved.
+© 2026 Ben Gutman. All rights reserved.
 
 ## 🚀 Deployment
 
