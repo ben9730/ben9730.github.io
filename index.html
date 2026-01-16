@@ -6,8 +6,13 @@
     <title>Ben Gutman - Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <header class="hero">
         <div class="container">
             <div class="hero-content">
@@ -15,7 +20,7 @@
                     <img src="profile.jpg" alt="Ben Gutman" class="profile-image">
                     <div class="profile-info">
                         <h1 class="name">Ben Gutman</h1>
-                        <p class="title">Full Stack Developer</p>
+                        <p class="title"><span id="typed-text"></span></p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -45,7 +50,7 @@
     </header>
 
     <main class="container">
-        <section class="profile-section">
+        <section class="profile-section" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="section-title">Profile</h2>
             <p class="profile-text">
                 Full-stack developer with a B.Sc. in Computer Science and experience in ERP, web, and backend development.
@@ -54,10 +59,10 @@
             </p>
         </section>
 
-        <section class="experience-section">
+        <section class="experience-section" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="section-title">Work Experience</h2>
 
-            <div class="experience-item">
+            <div class="experience-item" data-aos="fade-right" data-aos-delay="100">
                 <div class="experience-header">
                     <h3 class="job-title">Software Developer</h3>
                     <span class="job-period">2022 - 2026</span>
@@ -95,11 +100,11 @@
             </div>
         </section>
 
-        <section class="skills-section">
+        <section class="skills-section" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="section-title">Skills</h2>
 
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
                     <h3 class="skill-category-title">Programming Languages</h3>
                     <div class="skills-list">
                         <span class="skill-tag">Python</span>
@@ -130,10 +135,10 @@
             </div>
         </section>
 
-        <section class="projects-section">
+        <section class="projects-section" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="section-title">Projects</h2>
 
-            <div class="project-item">
+            <div class="project-item" data-aos="flip-left" data-aos-delay="100">
                 <h3 class="project-title">
                     <a href="https://github.com/ben9730/django-game-store" target="_blank" class="project-link">
                         Game Store Application
@@ -172,7 +177,7 @@
             </div>
         </section>
 
-        <section class="education-section">
+        <section class="education-section" data-aos="fade-up" data-aos-duration="1000">
             <h2 class="section-title">Education</h2>
             <div class="education-item">
                 <div class="education-header">
@@ -190,6 +195,143 @@
         </div>
     </footer>
 
+    <!-- Animation Libraries -->
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- Initialize Libraries Inline -->
+    <script>
+        // Initialize immediately after libraries load
+
+        // 1. Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // 2. Initialize Typed.js
+        new Typed('#typed-text', {
+            strings: [
+                'Full Stack Developer',
+                'Python Developer',
+                'Backend Developer',
+                'ERP Developer',
+                'QA Engineer',
+                'Vibe Coding Enthusiast'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+
+        // 3. Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#2563eb'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.4,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 4,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.3,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#2563eb',
+                    opacity: 0.3,
+                    width: 1.5
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: true,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: ['grab', 'bubble']
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 200,
+                        line_linked: {
+                            opacity: 0.5
+                        }
+                    },
+                    bubble: {
+                        distance: 250,
+                        size: 6,
+                        duration: 2,
+                        opacity: 0.8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 150,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 6
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
+    <!-- Custom Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
