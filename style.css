@@ -533,6 +533,162 @@ section {
     }
 }
 
+/* Welcome Modal */
+.welcome-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    animation: fadeInModal 0.5s ease forwards;
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    padding: 50px 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    animation: scaleIn 0.5s ease 0.3s forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.welcome-content h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: slideDown 0.6s ease 0.5s backwards;
+}
+
+.welcome-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.8;
+    animation: slideUp 0.6s ease 0.7s backwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-input-group {
+    margin-bottom: 25px;
+    animation: slideUp 0.6s ease 0.9s backwards;
+}
+
+.welcome-input-group label {
+    display: block;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.welcome-input-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.welcome-input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.welcome-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    animation: slideUp 0.6s ease 1.1s backwards;
+}
+
+.welcome-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.welcome-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.visitor-name {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.last-visit-time {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0 5px;
+}
+
 @media (max-width: 480px) {
     .profile-image {
         width: 120px;
@@ -549,5 +705,17 @@ section {
 
     section {
         padding: 20px;
+    }
+
+    .welcome-content {
+        padding: 35px 25px;
+    }
+
+    .welcome-content h2 {
+        font-size: 2rem;
+    }
+
+    .welcome-content p {
+        font-size: 1rem;
     }
 }
