@@ -1,7 +1,9 @@
 // ========================================
-// WELCOME MODAL & VISITOR TRACKING
+// WELCOME MODAL & VISITOR TRACKING - DISABLED
 // ========================================
 
+// COMMENTED OUT - Welcome modal disabled, visitors see site directly
+/*
 // Storage helper functions (using localStorage instead of cookies for local files)
 function setStorage(name, value) {
     try {
@@ -186,6 +188,7 @@ document.head.appendChild(style);
 window.addEventListener('load', () => {
     setTimeout(initWelcomeModal, 500);
 });
+*/
 
 // ========================================
 // ADDITIONAL INTERACTIVE FEATURES
